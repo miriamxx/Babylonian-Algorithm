@@ -1,0 +1,83 @@
+/*
+* The purpose of the Babylonian Algorithm assignment 
+* is to approximate the sqaure root of a integer. 
+* The integer must be postive, so the program will use two loops. 
+*
+* Date: 10/5/2018
+* @author miriam espino
+*/
+
+import java.util.Scanner;
+
+public class BabylonianAlgorithm {
+    
+      // Global variable 
+      public static final double ACCUR = 0.01;
+   
+    
+    public static void main(String[] args) 
+{
+    	// calling scanner class 
+    	Scanner keyboard = new Scanner(System.in); 
+    
+    	// declaring the variable
+    	int number = 0; 
+    
+    
+    // start of DO WHILE loop
+    do {
+    	
+    // prompting user to enter positive integer 
+    	System.out.println(" Enter a positive integer to find out sqaure root");
+    	number = keyboard.nextInt();
+    
+    }
+    while(number < 0); // setting condition
+    
+    // declaring and initializing variables 
+    	double guess = (number / 2);
+    	double previous = number;
+    	double ratio = (number / guess);
+    	
+    	
+    
+    
+    	// prompt user to take a guess 
+    	System.out.println("Guess what the square root of " + number + " is : ");
+    	guess =  keyboard.nextInt();
+    	
+     
+    // Babylonian iteration in a WHILE loop
+    while ((Math.abs(previous - guess))/ guess >= ACCUR) {
+    	
+    	// calculating the ratio
+    	ratio = number / guess;
+    	
+    	// set previous to guess 
+    	previous = guess; 	
+    	
+    	// resetting the value of guess 
+    	guess = ((previous + ratio)/2);
+    	
+    	//display value of current guess 
+    	System.out.println("Your current guess is " + guess);
+    	
+	    	
+	    	
+	    }// end of while loop
+	    
+	    //outputting square root answer and rounding to 2 decimal places 
+	    System.out.printf("%.02f" , guess);
+	    
+	 
+	    
+	    //ends scanner 
+	    keyboard.close();
+    
+    
+	}
+  }
+             
+    
+
+
