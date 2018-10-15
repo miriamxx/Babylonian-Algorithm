@@ -34,7 +34,7 @@ public class BabylonianAlgorithm {
     }
     while(number < 0); // setting condition
     
-    // declaring and initializing variables 
+    
     	double guess = (number / 2);
     	double previous = number;
     	double ratio = (number / guess);
